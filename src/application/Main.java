@@ -97,7 +97,7 @@ public class Main {
             workerArrayList.add(new Worker(cpf, name, workedHours, turn, category, incomePerHour));
             System.out.println("\nWorker added successfully.");
         } else {
-            System.err.println("The worker limit has been reached!\n");
+            System.err.println("\nThe worker limit has been reached!\n");
             sleep();
         }
     }
@@ -114,7 +114,7 @@ public class Main {
                 index++;
             }
         } else {
-            System.err.println("There are no workers to be shown.");
+            System.err.println("\nThere are no workers to be shown.");
             sleep();
         }
     }
@@ -132,9 +132,9 @@ public class Main {
                     return;
                 }
             }
-            System.err.println("There are no workers with the CPF " + cpf);
+            System.err.println("\nThere are no workers with the CPF " + cpf);
         } else {
-            System.err.println("There are no workers to be deleted.");
+            System.err.println("\nThere are no workers to be deleted.");
             sleep();
         }
     }
