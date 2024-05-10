@@ -6,6 +6,7 @@ public class Worker {
     private int hoursWorked;
     private char turn, category;
     private float incomePerHour;
+    private float actualIncome;
 
     public Worker(String cpf, String name, int hoursWorked, char turn, char category, float incomePerHour) {
         this.cpf = cpf;
@@ -38,6 +39,10 @@ public class Worker {
 
     public float getIncomePerHour() {
         return incomePerHour;
+    }
+
+    public float calculateIncome() {
+        return incomePerHour * hoursWorked;
     }
 
     @Override
