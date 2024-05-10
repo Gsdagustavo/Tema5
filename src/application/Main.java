@@ -44,7 +44,46 @@ public class Main {
 
     // Register a new worker
     public static void registerWorker() {
+        // Name
+        System.out.print("Enter the worker's name: ");
+        String name = sc.nextLine();
 
+        // CPF
+        System.out.print("Enter the worker's CPF: ");
+        String cpf = sc.nextLine();
+
+        // Worked Hours
+        System.out.print("Enter the worker's worked hours: ");
+        int workedHours = getIntInput();
+
+        while (workedHours < 0) {
+            System.err.print("Invalid input, try again: ");
+            workedHours = getIntInput();
+        }
+
+        // Turn
+        System.out.print("Enter the worker's turn [M / V / N]: ");
+        char turn = getCharInput();
+
+        // Category
+        System.out.print("Enter the worker's category [O / G]: ");
+        char category = getCharInput();
+
+        while (category != 'O' || category != 'G') {
+            System.err.print("Invalid input, try again: ");
+            category = getCharInput();
+        }
+
+        // income per hour
+        System.out.print("Enter the income per hour value: ");
+        float incomePerHour = getFloatInput();
+
+        while (incomePerHour < 0) {
+            System.err.print("Invalid input, try again: ");
+            incomePerHour = getFloatInput();
+        }
+
+        workerArrayList.add(new Worker(cpf, name, workedHours, turn, category, incomePerHour));
     }
 
     // Show all current workers
@@ -79,29 +118,28 @@ public class Main {
 
     // Get Char input
     public static char getCharInput() {
-        try {
-            return sc.nextLine().charAt(0);
-        } catch (Exception e) {
-            System.err.println("An error has occurred.");
-            return ' ';
-        }
+        return sc.nextLine().toUpperCase().charAt(0);
     }
 
     // Get Int input
     public static int getIntInput() {
-        try {
-            return Integer.parseInt(sc.nextLine());
-        } catch (InputMismatchException | NumberFormatException e) {
-            return -1;
+        while (true) {
+            try {
+                return Integer.parseInt(sc.nextLine());
+            } catch (InputMismatchException e) {
+                System.err.println("Invalid input, try again: ");
+            }
         }
     }
 
     // Get Float input
     public static float getFloatInput() {
-        try {
-            return Float.parseFloat(sc.nextLine());
-        } catch (InputMismatchException | NumberFormatException e) {
-            return -1;
+        while (true) {
+            try {
+                return Float.parseFloat(sc.nextLine());
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.err.println("Invalid input, try again: ");
+            }
         }
     }
 }
