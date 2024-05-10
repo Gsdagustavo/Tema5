@@ -13,7 +13,7 @@ public class Main {
 
     // Worker ArrayList
     public static ArrayList<Worker> workerArrayList = new ArrayList<>();
-    public static int MAX_WORKERS = 3;
+    public static int MAX_WORKERS = 20;
 
     public static void main(String[] args) {
 
