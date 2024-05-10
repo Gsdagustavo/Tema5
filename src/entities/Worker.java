@@ -47,13 +47,11 @@ public class Worker {
 
     @Override
     public String toString() {
-        return "Worker{" +
-                "cpf='" + cpf + '\'' +
-                ", name='" + name + '\'' +
-                ", hoursWorked=" + hoursWorked +
-                ", turn=" + turn +
-                ", category=" + category +
-                ", incomePerHour=" + incomePerHour +
-                '}';
+        return "CPF: " + cpf + "\n" +
+                "Name: " + name + "\n" +
+                "Hours Worked: " + hoursWorked + "\n" +
+                "Turn: " + turn + "\n" +
+                "Category" + category + "\n" +
+                "Worked hour value: " + incomePerHour + "\n";
     }
 }

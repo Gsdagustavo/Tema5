@@ -59,7 +59,17 @@ public class Main {
 
     // Delete a worker by CPF
     public static void deleteWorker() {
+        System.out.print("Enter the worker's CPF to be removed: ");
+        String cpf = sc.nextLine();
 
+        for (Worker worker : workerArrayList) {
+            if (worker.getCpf().equals(cpf)) {
+                workerArrayList.remove(worker);
+                return;
+            }
+        }
+
+        System.err.println("There are no workers with the CPF " + cpf);
     }
 
     // Show choice menu
@@ -69,20 +79,16 @@ public class Main {
 
     // Get Char input
     public static char getCharInput() {
-        char input = ' ';
-
         try {
             return sc.nextLine().charAt(0);
         } catch (Exception e) {
             System.err.println("An error has occurred.");
-            return input;
+            return ' ';
         }
     }
 
     // Get Int input
     public static int getIntInput() {
-        int input;
-
         try {
             return Integer.parseInt(sc.nextLine());
         } catch (InputMismatchException | NumberFormatException e) {
@@ -92,8 +98,6 @@ public class Main {
 
     // Get Float input
     public static float getFloatInput() {
-        float input = 0F;
-
         try {
             return Float.parseFloat(sc.nextLine());
         } catch (InputMismatchException | NumberFormatException e) {
