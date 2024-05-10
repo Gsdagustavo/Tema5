@@ -51,8 +51,8 @@ public class Worker {
                 "Name: " + name + "\n" +
                 "Hours Worked: " + hoursWorked + "\n" +
                 "Turn: " + turn + "\n" +
-                "Category" + category + "\n" +
-                "Worked hour value: " + incomePerHour + "\n" +
+                "Category: " + category + "\n" +
+                "Worked hour value: $ " + incomePerHour + "\n" +
                 "Actual income: $ " + String.format("%.2f", calculateIncome()) + "\n";
     }
 }
